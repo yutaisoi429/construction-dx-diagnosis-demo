@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>建設DXソリューション診断｜ツールありきで失敗しないDX</title>
+    <meta
+      name="description"
+      content="建設会社の課題・予算・運用体制から、Excel・AI・施工管理アプリ・原価管理・外部伴走支援まで最適な解決策を可視化する無料診断ページです。"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260601-main" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="建設DX診断トップへ">
+        <span class="logo-mark">建</span>
+        <span>建設DX診断</span>
+      </a>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#solution">ソリューション診断</a>
+        <a href="#tools">候補ツール</a>
+        <a href="#adoption">活用診断</a>
+        <a href="#consultation">無料相談</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">建設業の社長・現場責任者向け</p>
+          <h1>ツールを選ぶ前に、<br />自社の課題と運用力を見える化する。</h1>
+          <p class="lead">
+            建設DXツールは施工管理・写真・日報・工程・原価・勤怠・会計まで幅広く、いきなりSaaSを入れても現場に定着しないことがあります。まずは課題、損失額、予算、社内リソースを整理し、Excel・Google Drive・AI・専用ツール・伴走支援のどれが合うかを診断します。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#solution">無料で診断を始める</a>
+            <a class="button ghost" href="#consultation">30分無料相談</a>
+          </div>
+          <dl class="hero-stats" aria-label="診断で整理できること">
+            <div><dt>STEP 1</dt><dd>合う解決策</dd></div>
+            <div><dt>STEP 2</dt><dd>使いこなし準備度</dd></div>
+            <div><dt>GOAL</dt><dd>相談・実行計画</dd></div>
+          </dl>
+        </div>
+        <aside class="hero-card" aria-label="診断結果サンプル">
+          <p class="card-label">診断結果イメージ</p>
+          <h2>写真管理は小さく、原価管理は設計から</h2>
+          <p>写真だけならGoogle Driveや蔵衛門から。工事別粗利を見たい場合は、入力ルールを決めてから原価管理・BIを検討。</p>
+          <div class="mini-report">
+            <span>課題</span><strong>原価管理 / 写真管理</strong>
+            <span>月間ロス</span><strong>50〜100万円</strong>
+            <span>次の一手</span><strong>要件整理 → 小さく試す</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro section-grid">
+        <div>
+          <p class="eyebrow">Why this page?</p>
+          <h2>「有名な施工管理アプリ」ではなく、今の経営課題から逆算します。</h2>
+        </div>
+        <div class="intro-list">
+          <article>
+            <span>01</span>
+            <h3>現場系と管理系を分ける</h3>
+            <p>写真・日報・図面共有の課題と、原価・勤怠・会計・契約の課題は別物です。まず分類して優先順位を決めます。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>小さく始めてROIを見る</h3>
+            <p>全社一斉導入ではなく、1〜2現場や1業務で試し、削減時間・入力負荷・現場の反応を確認します。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>運用ルールを先に決める</h3>
+            <p>担当者、入力タイミング、命名ルール、振り返りの場がないと、良いツールでも定着しません。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="solution" class="diagnosis section-panel">
+        <div class="section-heading">
+          <p class="eyebrow">STEP 1</p>
+          <h2>ソリューション診断</h2>
+          <p>課題・損失額・予算・社内リソースを選ぶと、SaaSありきではなく「まず何で解決するか」を表示します。</p>
+        </div>
+
+        <div class="diagnosis-layout">
+          <form class="question-card" id="solutionForm">
+            <fieldset>
+              <legend>今、一番困っていることは何ですか？</legend>
+              <label><input type="checkbox" name="issues" value="cost" />原価管理・工事別粗利が見えない</label>
+              <label><input type="checkbox" name="issues" value="communication" />協力会社・現場との連絡が散らばる</label>
+              <label><input type="checkbox" name="issues" value="photo" />写真管理・電子小黒板・台帳作成が重い</label>
+              <label><input type="checkbox" name="issues" value="schedule" />工程管理・進捗共有が属人化している</label>
+              <label><input type="checkbox" name="issues" value="report" />日報・安全書類・報告書が紙やExcelで煩雑</label>
+              <label><input type="checkbox" name="issues" value="estimate" />見積・案件・受発注管理がバラバラ</label>
+              <label><input type="checkbox" name="issues" value="attendance" />勤怠・直行直帰・残業時間の把握が難しい</label>
+              <label><input type="checkbox" name="issues" value="contract" />契約・請求・会計まわりをペーパーレス化したい</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>月にどれくらい損失やムダがありそうですか？</legend>
+              <label><input type="radio" name="loss" value="low" checked />〜10万円：まず整理したい</label>
+              <label><input type="radio" name="loss" value="middle" />10〜50万円：一部業務から改善したい</label>
+              <label><input type="radio" name="loss" value="high" />50〜100万円：投資対効果を試算したい</label>
+              <label><input type="radio" name="loss" value="enterprise" />100万円以上：経営課題として優先したい</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>月額予算はどれくらいですか？</legend>
+              <label><input type="radio" name="budget" value="zero" checked />無料〜1万円：Excel・Drive・AI中心</label>
+              <label><input type="radio" name="budget" value="small" />1〜5万円：軽量SaaSも比較</label>
+              <label><input type="radio" name="budget" value="medium" />5〜20万円：現場系/管理系を組み合わせる</label>
+              <label><input type="radio" name="budget" value="large" />20万円以上：基幹・BI・伴走も検討</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>社内で運用できる人はいますか？</legend>
+              <label><input type="radio" name="operator" value="none" checked />いない・社長/監督が片手間</label>
+              <label><input type="radio" name="operator" value="part" />兼任担当者がいる</label>
+              <label><input type="radio" name="operator" value="owner" />推進責任者がいる</label>
+            </fieldset>
+          </form>
+
+          <aside class="result-card" aria-live="polite">
+            <p class="eyebrow">Recommendation</p>
+            <h3 id="solutionTitle">まずは無料〜低コストの仕組みで十分な可能性があります</h3>
+            <p id="solutionSummary">Excel / Googleスプレッドシートで損失を見える化し、写真管理だけならGoogle Driveなどから小さく始めましょう。</p>
+            <div class="recommend-list" id="recommendList"></div>
+            <div class="notice" id="solutionNotice">運用できる人がいない場合、ツール導入前に業務フローとルール設計を行うと失敗リスクを下げられます。</div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="tools" class="tool-section">
+        <div class="section-heading">
+          <p class="eyebrow">Tool candidates</p>
+          <h2>診断で出し分ける候補ツール・解決策</h2>
+          <p>施工管理アプリだけでなく、現場系・管理系・連携系に分けて、必要なものだけを検討します。</p>
+        </div>
+        <div class="tool-grid">
+          <article><span>低コスト</span><strong>Excel / Googleスプレッドシート</strong><p>原価台帳、案件一覧、見積管理、日報集計のたたき台。</p></article>
+          <article><span>写真管理</span><strong>Google Drive / 蔵衛門 / Photoruction</strong><p>写真整理・電子小黒板・台帳出力の必要度で選択。</p></article>
+          <article><span>現場共有</span><strong>ANDPAD / KANNA / ダンドリワーク</strong><p>図面共有、チャット、日報、工程、協力会社連携。</p></article>
+          <article><span>工程管理</span><strong>ANDPAD / BuildApp / ガント系ツール</strong><p>複数現場の進捗、遅延、担当者を見える化。</p></article>
+          <article><span>原価管理</span><strong>アイピア / 建設大臣 / kintone + BI</strong><p>工事別予実、粗利、発注、請求、会計連携を整理。</p></article>
+          <article><span>勤怠・労務</span><strong>ジョブカン / freee人事労務</strong><p>GPS打刻、直行直帰、残業時間、給与連携。</p></article>
+          <article><span>契約・会計</span><strong>クラウドサイン / freee / 弥生会計</strong><p>電子契約、請求、会計、経理のペーパーレス化。</p></article>
+          <article><span>AI・自動化</span><strong>ChatGPT / Gemini / Notion / AppSheet</strong><p>日報要約、議事録、FAQ、社内アプリ、定型作業の補助。</p></article>
+        </div>
+      </section>
+
+      <section id="adoption" class="adoption section-panel">
+        <div class="section-heading">
+          <p class="eyebrow">STEP 2</p>
+          <h2>使いこなすためのツール活用診断</h2>
+          <p>点数が低いほど「外注すべき」ではなく、まず要整理です。無料相談で、何を決めれば進められるかを整理します。</p>
+        </div>
+
+        <div class="adoption-layout">
+          <div class="check-table" role="table" aria-label="ツール活用診断表">
+            <div class="table-row table-head" role="row">
+              <span role="columnheader">チェック項目</span>
+              <span role="columnheader">現状（上から0点 / 0.5点 / 1点）</span>
+            </div>
+            <label class="table-row"><span>導入理由は明確か</span><select data-adoption><option value="0">0点：なんとなくDXしたい</option><option value="0.5">0.5点：課題はあるが数値化できていない</option><option value="1">1点：削減したい時間・損失が明確</option></select></label>
+            <label class="table-row"><span>業務フローを理解しているか</span><select data-adoption><option value="0">0点：担当者ごとにやり方が違う</option><option value="0.5">0.5点：大枠は把握している</option><option value="1">1点：現場〜事務まで流れを可視化済み</option></select></label>
+            <label class="table-row"><span>運用ルールがあるか</span><select data-adoption><option value="0">0点：入力ルールがない</option><option value="0.5">0.5点：一部ルールはある</option><option value="1">1点：誰がいつ何を入力するか決まっている</option></select></label>
+            <label class="table-row"><span>キーマンが決まっているか</span><select data-adoption><option value="0">0点：決まっていない</option><option value="0.5">0.5点：兼任担当者はいる</option><option value="1">1点：推進責任者と現場協力者がいる</option></select></label>
+            <label class="table-row"><span>現場に浸透させる準備があるか</span><select data-adoption><option value="0">0点：説明・教育は未定</option><option value="0.5">0.5点：説明会だけ予定</option><option value="1">1点：試行現場・教育・問い合わせ先がある</option></select></label>
+            <label class="table-row"><span>改善・定着の振り返りができるか</span><select data-adoption><option value="0">0点：導入後は現場任せ</option><option value="0.5">0.5点：必要時だけ確認</option><option value="1">1点：定例で数値と現場の声を確認する</option></select></label>
+          </div>
+
+          <aside class="adoption-result">
+            <p class="card-label">活用準備スコア</p>
+            <div class="meter" aria-label="活用準備スコア">
+              <div class="meter-bar" id="adoptionBar"></div>
+            </div>
+            <p class="score"><span id="adoptionScore">0</span>/6点</p>
+            <h3 id="adoptionTitle">要整理：まず診断で現状を言語化しましょう</h3>
+            <p id="adoptionText">導入理由や運用ルールが未整理です。外注前提ではなく、無料相談で「何を決めれば自社で進められるか」を整理しましょう。</p>
+            <a class="button primary full" href="#consultation">整理するために相談する</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="roadmap">
+        <div>
+          <p class="eyebrow">After diagnosis</p>
+          <h2>無料相談では、診断結果を実行計画に落とし込みます。</h2>
+          <p>ツール名を決めるだけでなく、優先順位・試行範囲・運用ルール・現場への伝え方まで整理します。</p>
+        </div>
+        <ol class="steps">
+          <li><span>01</span>課題と月間ロスを整理</li>
+          <li><span>02</span>Excel / AI / SaaS / 伴走支援を比較</li>
+          <li><span>03</span>1〜2現場で試す範囲を決定</li>
+          <li><span>04</span>30分無料相談で次の一手を決定</li>
+        </ol>
+      </section>
+
+      <section id="consultation" class="consultation">
+        <p class="eyebrow">Free consultation</p>
+        <h2>30分無料相談で、貴社に合うDXの始め方を一緒に整理します。</h2>
+        <p>Spirの日程調整リンクに差し替えできる仮ボタンです。診断結果をもとに、ツール導入・Excel改善・AI活用・伴走支援のどれが最適かを相談できます。</p>
+        <div class="hero-actions center">
+          <a class="button primary" href="https://www.spirinc.com/" target="_blank" rel="noreferrer">30分無料相談する</a>
+          <a class="button ghost light" href="#solution">もう一度診断する</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 建設DX診断 Demo. ツールありきではなく、課題に合う解決策を。</p>
+    </footer>
+
+    <script src="script.js?v=20260601-main"></script>
+  </body>
+</html>
