@@ -1,4 +1,4 @@
-/* Build: 2026-06-01 main existing-files refresh */
+/* Build: 2026-06-03 solution refresh */
 :root {
   color-scheme: light;
   --bg: #f7f5ef;
@@ -61,9 +61,9 @@ h3 { font-size: 21px; line-height: 1.45; margin-bottom: 10px; }
 section { padding: 84px clamp(18px, 5vw, 72px); }
 .eyebrow {
   color: var(--primary);
-  font-size: 13px;
+  font-size: clamp(15px, 1.45vw, 18px);
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -111,8 +111,8 @@ section { padding: 84px clamp(18px, 5vw, 72px); }
   border-radius: 18px;
   padding: 16px;
 }
-.hero-stats dt { color: var(--accent); font-size: 12px; font-weight: 900; }
-.hero-stats dd { font-size: 17px; font-weight: 900; margin: 4px 0 0; }
+.hero-stats dt { color: var(--accent); font-size: 13px; font-weight: 900; }
+.hero-stats dd { font-size: clamp(17px, 1.6vw, 20px); font-weight: 900; margin: 4px 0 0; }
 
 .hero-card, .section-panel, .intro-list article, .tool-grid article, .roadmap, .adoption-result {
   background: rgba(255, 253, 248, 0.96);
@@ -127,7 +127,7 @@ section { padding: 84px clamp(18px, 5vw, 72px); }
   align-items: center;
   color: var(--primary);
   display: inline-flex;
-  font-size: 13px;
+  font-size: clamp(14px, 1.25vw, 16px);
   font-weight: 900;
   gap: 8px;
   margin-bottom: 16px;
@@ -381,6 +381,7 @@ input, select { accent-color: var(--primary); margin-right: 8px; }
   justify-content: space-between;
 }
 .tool-card-head strong {
+  flex: 1;
   font-size: 18px;
   line-height: 1.35;
 }
@@ -452,4 +453,61 @@ input, select { accent-color: var(--primary); margin-right: 8px; }
 @media (max-width: 720px) {
   .mini-roadmap li, .tool-card-head, .tool-card-foot { grid-template-columns: 1fr; }
   .tool-card-head, .tool-card-foot { align-items: flex-start; flex-direction: column; }
+}
+
+/* readability and logo-like tool labels */
+.hero .eyebrow {
+  color: var(--primary-dark);
+  font-size: clamp(16px, 1.6vw, 20px);
+  letter-spacing: 0.06em;
+}
+.empty-state {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px dashed rgba(255, 255, 255, 0.34);
+  border-radius: 18px;
+  color: #eaf7f3;
+  font-weight: 800;
+  padding: 18px;
+}
+.brand-logo, .logo-tile {
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary), #2f6d58);
+  border: 1px solid rgba(201, 168, 76, 0.36);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(27, 61, 47, 0.16);
+  color: #fff;
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  min-height: 42px;
+  min-width: 64px;
+  padding: 8px 12px;
+}
+.brand-logo {
+  flex: 0 0 auto;
+  font-size: 12px;
+  min-height: 38px;
+  min-width: 54px;
+}
+.logo-tool-grid article {
+  display: flex;
+  flex-direction: column;
+}
+.logo-tile {
+  align-self: flex-start;
+  font-size: 14px;
+  margin-bottom: 16px;
+  min-height: 48px;
+  min-width: 86px;
+}
+.logo-tool-grid article:nth-child(2n) .logo-tile {
+  background: linear-gradient(135deg, #203b63, #4f6fa5);
+}
+.logo-tool-grid article:nth-child(3n) .logo-tile {
+  background: linear-gradient(135deg, #7c5c18, var(--accent));
+}
+@media (max-width: 720px) {
+  .hero .eyebrow { font-size: 16px; }
+  .brand-logo { min-width: 48px; }
 }
