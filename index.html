@@ -8,7 +8,10 @@
       name="description"
       content="建設会社の課題・予算・運用体制から、Excel・AI・施工管理アプリ・原価管理・外部伴走支援まで最適な解決策を可視化する無料診断ページです。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260601-main" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260603-v3" />
   </head>
   <body>
     <header class="site-header">
@@ -82,53 +85,70 @@
         <div class="section-heading">
           <p class="eyebrow">STEP 1</p>
           <h2>ソリューション診断</h2>
-          <p>課題・損失額・予算・社内リソースを選ぶと、SaaSありきではなく「まず何で解決するか」を表示します。</p>
+          <p>課題・損失規模・予算・社内推進リソースの4軸から、フェーズA〜Dと候補ツールをリアルタイムで提案します。</p>
         </div>
 
-        <div class="diagnosis-layout">
+        <div class="diagnosis-layout solution-layout">
           <form class="question-card" id="solutionForm">
             <fieldset>
-              <legend>今、一番困っていることは何ですか？</legend>
-              <label><input type="checkbox" name="issues" value="cost" />原価管理・工事別粗利が見えない</label>
-              <label><input type="checkbox" name="issues" value="communication" />協力会社・現場との連絡が散らばる</label>
-              <label><input type="checkbox" name="issues" value="photo" />写真管理・電子小黒板・台帳作成が重い</label>
-              <label><input type="checkbox" name="issues" value="schedule" />工程管理・進捗共有が属人化している</label>
-              <label><input type="checkbox" name="issues" value="report" />日報・安全書類・報告書が紙やExcelで煩雑</label>
-              <label><input type="checkbox" name="issues" value="estimate" />見積・案件・受発注管理がバラバラ</label>
-              <label><input type="checkbox" name="issues" value="attendance" />勤怠・直行直帰・残業時間の把握が難しい</label>
-              <label><input type="checkbox" name="issues" value="contract" />契約・請求・会計まわりをペーパーレス化したい</label>
+              <legend>① 課題カテゴリ（複数選択可）</legend>
+              <label><input type="checkbox" name="complexities" value="cost" />原価・収益管理</label>
+              <label><input type="checkbox" name="complexities" value="site_share" />現場情報共有</label>
+              <label><input type="checkbox" name="complexities" value="photo" />写真・書類管理</label>
+              <label><input type="checkbox" name="complexities" value="schedule" />工程管理</label>
+              <label><input type="checkbox" name="complexities" value="labor" />勤怠・労務</label>
+              <label><input type="checkbox" name="complexities" value="contract" />契約・請求・会計</label>
+              <label><input type="checkbox" name="complexities" value="estimate" />見積・受発注</label>
+              <label><input type="checkbox" name="complexities" value="safety" />安全書類</label>
+              <label><input type="checkbox" name="complexities" value="automation" />AI・自動化</label>
             </fieldset>
 
             <fieldset>
-              <legend>月にどれくらい損失やムダがありそうですか？</legend>
-              <label><input type="radio" name="loss" value="low" checked />〜10万円：まず整理したい</label>
-              <label><input type="radio" name="loss" value="middle" />10〜50万円：一部業務から改善したい</label>
-              <label><input type="radio" name="loss" value="high" />50〜100万円：投資対効果を試算したい</label>
-              <label><input type="radio" name="loss" value="enterprise" />100万円以上：経営課題として優先したい</label>
+              <legend>② 月次損失規模</legend>
+              <label><input type="radio" name="loss" value="lt10" checked />〜10万円：まず整理したい</label>
+              <label><input type="radio" name="loss" value="10to50" />10〜50万円：一部業務から改善したい</label>
+              <label><input type="radio" name="loss" value="50to100" />50〜100万円：投資対効果を試算したい</label>
+              <label><input type="radio" name="loss" value="gt100" />100万円以上：経営課題として優先したい</label>
             </fieldset>
 
             <fieldset>
-              <legend>月額予算はどれくらいですか？</legend>
-              <label><input type="radio" name="budget" value="zero" checked />無料〜1万円：Excel・Drive・AI中心</label>
-              <label><input type="radio" name="budget" value="small" />1〜5万円：軽量SaaSも比較</label>
-              <label><input type="radio" name="budget" value="medium" />5〜20万円：現場系/管理系を組み合わせる</label>
-              <label><input type="radio" name="budget" value="large" />20万円以上：基幹・BI・伴走も検討</label>
+              <legend>③ 月額予算</legend>
+              <label><input type="radio" name="budget" value="free" checked />無料〜1万円：Excel・Drive・AI中心</label>
+              <label><input type="radio" name="budget" value="lt5" />1〜5万円：軽量SaaSも比較</label>
+              <label><input type="radio" name="budget" value="lt20" />5〜20万円：現場導入に本格投資</label>
+              <label><input type="radio" name="budget" value="gt20" />20万円以上：基幹システム・全社展開</label>
             </fieldset>
 
             <fieldset>
-              <legend>社内で運用できる人はいますか？</legend>
-              <label><input type="radio" name="operator" value="none" checked />いない・社長/監督が片手間</label>
-              <label><input type="radio" name="operator" value="part" />兼任担当者がいる</label>
-              <label><input type="radio" name="operator" value="owner" />推進責任者がいる</label>
+              <legend>④ 社内推進リソース</legend>
+              <label><input type="radio" name="resource" value="none" checked />なし（現場任せ）</label>
+              <label><input type="radio" name="resource" value="one" />推進担当が1名いる</label>
+              <label><input type="radio" name="resource" value="team" />情シス・専任チームあり</label>
             </fieldset>
           </form>
 
-          <aside class="result-card" aria-live="polite">
-            <p class="eyebrow">Recommendation</p>
-            <h3 id="solutionTitle">まずは無料〜低コストの仕組みで十分な可能性があります</h3>
-            <p id="solutionSummary">Excel / Googleスプレッドシートで損失を見える化し、写真管理だけならGoogle Driveなどから小さく始めましょう。</p>
-            <div class="recommend-list" id="recommendList"></div>
-            <div class="notice" id="solutionNotice">運用できる人がいない場合、ツール導入前に業務フローとルール設計を行うと失敗リスクを下げられます。</div>
+          <aside class="result-card solution-results" id="solutionResults" aria-live="polite">
+            <div class="summary-card">
+              <p class="eyebrow">Recommendation</p>
+              <p class="phase-label" id="phaseLabel">フェーズA：無料〜低コストで可視化</p>
+              <h3 id="solutionTitle">まずは無料〜低コストの仕組みで十分な可能性があります</h3>
+              <p id="solutionSummary">Excel・Google・AIで課題を可視化し、損失額を見える化しましょう。</p>
+              <div class="warning-banner" id="solutionWarning" hidden>
+                推進担当者がいないと、ツール導入後に定着しないケースが多いです。まず1ツールを小さく検証し、現場のキーマンを推進担当に任命することをお勧めします。
+              </div>
+            </div>
+
+            <div class="result-block">
+              <h4>推薦ツール</h4>
+              <div class="tool-card-list" id="toolCards"></div>
+              <p class="roi-note" id="roiText" hidden></p>
+              <div class="subsidy-banner" id="subsidyBanner" hidden>フェーズC以上は、IT導入補助金・ものづくり補助金の活用余地も確認しましょう。</div>
+            </div>
+
+            <div class="result-block roadmap-block">
+              <h4>次のステップ</h4>
+              <ol class="mini-roadmap" id="roadmapList"></ol>
+            </div>
           </aside>
         </div>
       </section>
@@ -136,18 +156,18 @@
       <section id="tools" class="tool-section">
         <div class="section-heading">
           <p class="eyebrow">Tool candidates</p>
-          <h2>診断で出し分ける候補ツール・解決策</h2>
-          <p>施工管理アプリだけでなく、現場系・管理系・連携系に分けて、必要なものだけを検討します。</p>
+          <h2>候補ツール一覧</h2>
+          <p>フェーズ判定では、以下のような無料ツール・軽量SaaS・総合型SaaS・全社DX施策を課題カテゴリに応じて出し分けます。</p>
         </div>
         <div class="tool-grid">
-          <article><span>低コスト</span><strong>Excel / Googleスプレッドシート</strong><p>原価台帳、案件一覧、見積管理、日報集計のたたき台。</p></article>
-          <article><span>写真管理</span><strong>Google Drive / 蔵衛門 / Photoruction</strong><p>写真整理・電子小黒板・台帳出力の必要度で選択。</p></article>
-          <article><span>現場共有</span><strong>ANDPAD / KANNA / ダンドリワーク</strong><p>図面共有、チャット、日報、工程、協力会社連携。</p></article>
-          <article><span>工程管理</span><strong>ANDPAD / BuildApp / ガント系ツール</strong><p>複数現場の進捗、遅延、担当者を見える化。</p></article>
-          <article><span>原価管理</span><strong>アイピア / 建設大臣 / kintone + BI</strong><p>工事別予実、粗利、発注、請求、会計連携を整理。</p></article>
-          <article><span>勤怠・労務</span><strong>ジョブカン / freee人事労務</strong><p>GPS打刻、直行直帰、残業時間、給与連携。</p></article>
-          <article><span>契約・会計</span><strong>クラウドサイン / freee / 弥生会計</strong><p>電子契約、請求、会計、経理のペーパーレス化。</p></article>
-          <article><span>AI・自動化</span><strong>ChatGPT / Gemini / Notion / AppSheet</strong><p>日報要約、議事録、FAQ、社内アプリ、定型作業の補助。</p></article>
+          <article><span>フェーズA</span><strong>Excel / Googleスプレッドシート</strong><p>原価台帳・案件管理・日報集計のたたき台。</p></article>
+          <article><span>フェーズA</span><strong>ChatGPT / Gemini / Google Drive</strong><p>日報要約、議事録、写真・書類共有を低コストで開始。</p></article>
+          <article><span>フェーズA-B</span><strong>蔵衛門 / KANNA（無料プラン）</strong><p>工事写真台帳・電子小黒板・現場日報を小さく導入。</p></article>
+          <article><span>フェーズB</span><strong>KANNA / Kaname / グリーンサイト</strong><p>現場情報共有、安全書類、協力会社連携を軽量SaaSで改善。</p></article>
+          <article><span>フェーズB</span><strong>ジョブカン / クラウドサイン / freee</strong><p>勤怠、電子契約、会計・人事労務を管理系DXとして整備。</p></article>
+          <article><span>フェーズB-C</span><strong>kintone / AppSheet / バレーナ</strong><p>自社業務に合わせたノーコードアプリと業務連携。</p></article>
+          <article><span>フェーズC</span><strong>ANDPAD / AnyONE / アイピア / クラフトバンク</strong><p>原価・見積・工程・請求など複数課題を一元管理。</p></article>
+          <article><span>フェーズD</span><strong>カスタム開発 / BIM・CIM連携</strong><p>全社DX、基幹刷新、3次元データ活用を長期投資で推進。</p></article>
         </div>
       </section>
 
@@ -214,6 +234,6 @@
       <p>© 建設DX診断 Demo. ツールありきではなく、課題に合う解決策を。</p>
     </footer>
 
-    <script src="script.js?v=20260601-main"></script>
+    <script src="script.js?v=20260603-v3"></script>
   </body>
 </html>

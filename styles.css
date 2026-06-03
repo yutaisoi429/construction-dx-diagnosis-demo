@@ -7,9 +7,9 @@
   --ink: #1b2a34;
   --muted: #64707a;
   --line: #e5ded2;
-  --primary: #0f7b63;
-  --primary-dark: #095a49;
-  --accent: #e6a93c;
+  --primary: #1B3D2F;
+  --primary-dark: #123025;
+  --accent: #C9A84C;
   --blue: #244f78;
   --soft-green: #e7f3ee;
   --shadow: 0 18px 48px rgba(42, 37, 28, 0.12);
@@ -294,4 +294,162 @@ input, select { accent-color: var(--primary); margin-right: 8px; }
   .section-panel, .roadmap { border-radius: 24px; margin: 38px 18px; }
   .hero-stats, .tool-grid, .table-row { grid-template-columns: 1fr; }
   h1 { font-size: 38px; }
+}
+
+/* v3 solution diagnosis */
+.solution-layout {
+  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+}
+.solution-results {
+  display: grid;
+  gap: 18px;
+  max-height: calc(100vh - 118px);
+  overflow: auto;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+.solution-results.is-updating {
+  animation: resultFadeIn 0.28s ease;
+}
+@keyframes resultFadeIn {
+  from { opacity: 0.72; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.summary-card, .result-block {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 18px;
+}
+.phase-label {
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid rgba(201, 168, 76, 0.34);
+  border-radius: 999px;
+  color: #ffe7a7 !important;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+}
+.warning-banner, .subsidy-banner, .roi-note {
+  border-radius: 16px;
+  font-weight: 800;
+  margin: 14px 0 0;
+  padding: 14px;
+}
+.warning-banner {
+  background: rgba(255, 199, 79, 0.18);
+  border: 1px solid rgba(255, 199, 79, 0.42);
+  color: #ffe3a3;
+}
+.subsidy-banner {
+  background: rgba(110, 231, 183, 0.14);
+  border: 1px solid rgba(110, 231, 183, 0.34);
+  color: #c7f9e6;
+}
+.roi-note {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff !important;
+}
+.result-block h4 {
+  color: #fff;
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+.tool-card-list {
+  display: grid;
+  gap: 12px;
+}
+.recommend-tool-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 18px;
+  color: var(--ink);
+  padding: 16px;
+}
+.recommend-tool-card p {
+  color: #51606a;
+  font-size: 14px;
+  margin: 10px 0 14px;
+}
+.tool-card-head, .tool-card-foot {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+.tool-card-head strong {
+  font-size: 18px;
+  line-height: 1.35;
+}
+.type-pill, .tool-badge {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 6px 9px;
+}
+.type-pill {
+  background: var(--primary);
+  color: #fff;
+  text-transform: uppercase;
+}
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tool-badge {
+  background: var(--soft-green);
+  color: var(--primary-dark);
+}
+.tool-card-foot {
+  border-top: 1px solid #e8eced;
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 900;
+  padding-top: 12px;
+}
+.detail-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.muted-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+.mini-roadmap {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mini-roadmap li {
+  align-items: start;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  color: #eaf7f3;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 86px 1fr;
+  padding: 12px;
+}
+.mini-roadmap span {
+  color: #ffe7a7;
+  font-weight: 900;
+}
+@media (max-width: 1080px) {
+  .solution-layout { grid-template-columns: 1fr; }
+  .solution-results { max-height: none; }
+}
+@media (max-width: 720px) {
+  .mini-roadmap li, .tool-card-head, .tool-card-foot { grid-template-columns: 1fr; }
+  .tool-card-head, .tool-card-foot { align-items: flex-start; flex-direction: column; }
 }
