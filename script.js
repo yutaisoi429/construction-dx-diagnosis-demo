@@ -7,11 +7,11 @@ const solutionSummary = document.querySelector("#solutionSummary");
 const toolCards = document.querySelector("#toolCards");
 const roadmapList = document.querySelector("#roadmapList");
 const subsidyBanner = document.querySelector("#subsidyBanner");
-const adoptionInputs = document.querySelectorAll("[data-adoption]");
-const adoptionScore = document.querySelector("#adoptionScore");
-const adoptionBar = document.querySelector("#adoptionBar");
-const adoptionTitle = document.querySelector("#adoptionTitle");
-const adoptionText = document.querySelector("#adoptionText");
+const workflowInput = document.querySelector("#workflowInput");
+const workflowChart = document.querySelector("#workflowChart");
+const workflowSummary = document.querySelector("#workflowSummary");
+const issueInsights = document.querySelector("#issueInsights");
+const sampleWorkflowButton = document.querySelector("#sampleWorkflowButton");
 
 const CATEGORY_LABELS = {
   cost: "原価・収益管理",
@@ -192,25 +192,82 @@ function renderRecommendations() {
   window.requestAnimationFrame(() => results.classList.add("is-updating"));
 }
 
-function renderAdoption() {
-  const total = [...adoptionInputs].reduce((sum, input) => sum + Number(input.value), 0);
-  adoptionScore.textContent = Number.isInteger(total) ? total : total.toFixed(1);
-  adoptionBar.style.width = `${Math.round((total / 6) * 100)}%`;
 
-  if (total >= 4.5) {
-    adoptionTitle.textContent = "実行準備あり：小さく試して横展開できます";
-    adoptionText.textContent = "導入目的と運用体制がかなり整理されています。1〜2現場で試し、削減時間と現場の声を見ながら横展開しましょう。";
-  } else if (total >= 2.5) {
-    adoptionTitle.textContent = "一部要整理：伴走相談で抜け漏れを確認しましょう";
-    adoptionText.textContent = "課題は見えていますが、運用ルールや浸透計画に抜けがありそうです。無料相談で決めるべき項目を整理しましょう。";
-  } else {
-    adoptionTitle.textContent = "要整理：導入前に現状を整理しましょう";
-    adoptionText.textContent = "導入理由や運用ルールが未整理です。無料相談で「何を決めれば自社で進められるか」を一緒に整理しましょう。";
+const SAMPLE_WORKFLOW = `社長が電話で新規依頼を受ける：10分
+社長が現場監督へLINEで現地調査を依頼：5分
+現場監督が現地調査をして写真を撮る：90分
+事務が見積内容をExcelへ転記する：40分
+社長が金額を確認し、差し戻しが発生する：30分
+事務が見積書を修正する：25分
+お客様へ見積提出：15分`;
+
+const RISK_KEYWORDS = ["待ち", "確認", "差し戻し", "戻し", "転記", "電話", "紙", "探", "遅", "漏", "不明", "属人", "二重", "手入力"];
+const ACTOR_PATTERN = /(社長|現場監督|監督|事務|経理|営業|職人|協力会社|お客様|顧客|担当者|管理者|責任者)/;
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[char]);
+}
+
+function parseWorkflowLine(line, index) {
+  const timeMatch = line.match(/(\d+(?:\.\d+)?)\s*(分|時間|日)/);
+  const actorMatch = line.match(ACTOR_PATTERN);
+  const minutes = timeMatch
+    ? Number(timeMatch[1]) * (timeMatch[2] === "時間" ? 60 : timeMatch[2] === "日" ? 480 : 1)
+    : 0;
+  const actor = actorMatch ? actorMatch[1] : "担当未記入";
+  const task = line
+    .replace(actor, "")
+    .replace(/^[がはをにへ、\s]+/, "")
+    .replace(/[:：]?\s*\d+(?:\.\d+)?\s*(分|時間|日).*/, "")
+    .trim() || `業務${index + 1}`;
+  const risks = RISK_KEYWORDS.filter((keyword) => line.includes(keyword));
+
+  return { actor, task, minutes, risks, raw: line };
+}
+
+function formatMinutes(minutes) {
+  if (!minutes) return "時間未記入";
+  if (minutes >= 60) return `${Math.round((minutes / 60) * 10) / 10}時間`;
+  return `${minutes}分`;
+}
+
+function renderWorkflow() {
+  const lines = workflowInput.value
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length === 0) {
+    workflowSummary.textContent = "未入力";
+    workflowChart.innerHTML = `<div class="workflow-empty">左の入力欄に業務の流れを書くと、ここにフローチャートを表示します。</div>`;
+    issueInsights.innerHTML = "";
+    return;
   }
+
+  const steps = lines.slice(0, 10).map(parseWorkflowLine);
+  const totalMinutes = steps.reduce((sum, step) => sum + step.minutes, 0);
+  const riskSteps = steps.filter((step) => step.risks.length > 0 || step.minutes >= 60);
+
+  workflowSummary.textContent = `${steps.length}工程 / ${formatMinutes(totalMinutes)}を可視化`;
+  workflowChart.innerHTML = steps.map((step, index) => {
+    const isRisk = step.risks.length > 0 || step.minutes >= 60;
+    return `<div class="flow-node ${isRisk ? "has-risk" : ""}">
+      <span class="node-index">${String(index + 1).padStart(2, "0")}</span>
+      <strong>${escapeHtml(step.task)}</strong>
+      <dl><div><dt>担当</dt><dd>${escapeHtml(step.actor)}</dd></div><div><dt>時間</dt><dd>${formatMinutes(step.minutes)}</dd></div></dl>
+      ${isRisk ? `<p class="risk-label">課題候補：${step.risks.length ? escapeHtml(step.risks.join("・")) : "時間が長い"}</p>` : ""}
+    </div>`;
+  }).join("<span class=\"flow-arrow\">→</span>");
+
+  issueInsights.innerHTML = `<h3>課題候補</h3><ul>${riskSteps.length ? riskSteps.map((step) => `<li><strong>${escapeHtml(step.actor)}</strong>の「${escapeHtml(step.task)}」は、${step.risks.length ? `「${escapeHtml(step.risks.join("・"))}」が含まれます` : "時間が長くなっています"}。入力ルール・担当範囲・自動化余地を確認しましょう。</li>`).join("") : "<li>大きな詰まり候補はまだ見つかっていません。時間や差し戻し内容を追記すると精度が上がります。</li>"}</ul>`;
 }
 
 solutionForm.addEventListener("change", renderRecommendations);
-adoptionInputs.forEach((input) => input.addEventListener("change", renderAdoption));
+workflowInput.addEventListener("input", renderWorkflow);
+sampleWorkflowButton.addEventListener("click", () => {
+  workflowInput.value = SAMPLE_WORKFLOW;
+  renderWorkflow();
+});
 
 renderRecommendations();
-renderAdoption();
+renderWorkflow();

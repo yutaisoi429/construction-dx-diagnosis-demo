@@ -22,7 +22,7 @@
       <nav class="nav" aria-label="主要ナビゲーション">
         <a href="#solution">ソリューション診断</a>
         <a href="#tools">候補ツール</a>
-        <a href="#adoption">活用診断</a>
+        <a href="#issue-map">課題特定診断</a>
         <a href="#consultation">無料相談</a>
       </nav>
     </header>
@@ -40,9 +40,9 @@
             <a class="button ghost" href="https://app.spirinc.com/t/0qzl501rEgr4nlq5JSeSd/as/3zdEhmEoqUd8cTMu_RV7b/confirm" target="_blank" rel="noreferrer">30分無料相談</a>
           </div>
           <dl class="hero-stats" aria-label="診断で整理できること">
-            <div><dt>STEP 1</dt><dd>課題に合う解決策</dd></div>
-            <div><dt>STEP 2</dt><dd>導入準備チェック</dd></div>
-            <div><dt>GOAL</dt><dd>導入効果を実感</dd></div>
+            <div><dt>STEP 1-A</dt><dd>課題を特定</dd></div>
+            <div><dt>STEP 1-B</dt><dd>解決策を比較</dd></div>
+            <div><dt>GOAL</dt><dd>最初の一手を決定</dd></div>
           </dl>
         </div>
         <aside class="hero-card" aria-label="診断結果サンプル">
@@ -60,23 +60,23 @@
       <section class="intro section-grid">
         <div>
           <p class="eyebrow">DXツール導入において必要なこと</p>
-          <h2>Step1→Step2で「必要なこと」と「できること」を明確にしてから進めます。</h2>
+          <h2>このサイトではSTEP 1（課題特定と解決策整理）に集中します。</h2>
         </div>
-        <div class="intro-list flow-list">
-          <article>
-            <span>STEP 1</span>
-            <h3>まず、自社に必要な解決策を整理する</h3>
-            <p>写真、日報、図面共有、原価、勤怠、会計などの課題を分け、いま本当に解決すべき業務と優先順位を言語化します。</p>
+        <div class="intro-list flow-list step-focus">
+          <article class="is-supported">
+            <span>このサイトで支援</span>
+            <h3>STEP 1：課題特定と解決策の整理</h3>
+            <p>業務フローから詰まりを見つけ、課題・損失・予算を整理したうえで、Excel・AI・ITツール・伴走支援のどれから始めるべきかを比較します。</p>
           </article>
-          <article>
-            <span>STEP 2</span>
-            <h3>次に、社内で実行できる準備を確認する</h3>
-            <p>担当者、入力ルール、現場への説明、振り返りの場がないと、ツール導入だけで止まり、現場に定着しません。</p>
+          <article class="is-next-site">
+            <span>別サイトで診断予定</span>
+            <h3>STEP 2：使いこなすための運用準備</h3>
+            <p>担当者、入力ルール、現場への説明、振り返りの場など、導入後に定着させるための準備は別ページで詳しく診断します。</p>
           </article>
           <article>
             <span>GOAL</span>
-            <h3>ツール導入ではなく、現場で使われるDXへ</h3>
-            <p>課題の本質整理から現場への浸透までを丁寧に設計し、Excel・AI・ITツール・伴走支援の中から最小の一手を選びます。</p>
+            <h3>ツール導入ではなく、現場で効果を感じるDXへ</h3>
+            <p>当サイトではまずSTEP 1に集中し、社内で話し合うべき課題と最初に検証する解決策を見える化します。</p>
           </article>
         </div>
       </section>
@@ -158,36 +158,37 @@
         </div>
       </section>
 
-      <section id="adoption" class="adoption section-panel">
+      <section id="issue-map" class="issue-map section-panel">
         <div class="section-heading">
-          <p class="eyebrow">STEP 2</p>
-          <h2>ツールを使いこなすための準備診断</h2>
-          <p>導入前に決めておくべき運用ルールや担当者を確認し、現場に定着させる準備ができているかを整理します。</p>
+          <p class="eyebrow">課題特定診断</p>
+          <h2>業務の流れを入力して、課題が起きている場所を可視化する</h2>
+          <p>「誰が・何を・どれくらい時間をかけているか」を書くと、ブラウザ上で業務フロー図のたたき台を作成します。AI/APIなしのデモのため、まずは課題整理の入口としてご利用ください。</p>
         </div>
 
-        <div class="adoption-layout">
-          <div class="check-table" role="table" aria-label="ツール活用診断表">
-            <div class="table-row table-head" role="row">
-              <span role="columnheader">チェック項目</span>
-              <span role="columnheader">現状（上から0点 / 0.5点 / 1点）</span>
+        <div class="issue-layout">
+          <div class="workflow-input-card">
+            <label for="workflowInput">業務の流れを入力してください</label>
+            <textarea id="workflowInput" rows="10" placeholder="例：
+社長が電話で新規依頼を受ける：10分
+社長が現場監督へLINEで現地調査を依頼：5分
+現場監督が現地調査をして写真を撮る：90分
+事務が見積書へ転記する：40分
+社長が金額を確認し、差し戻しが発生する：30分
+お客様へ見積提出：15分"></textarea>
+            <div class="workflow-actions">
+              <button class="button primary" type="button" id="sampleWorkflowButton">サンプルを入れる</button>
+              <a class="button ghost" href="#consultation">フローを相談する</a>
             </div>
-            <label class="table-row"><span>導入理由は明確か</span><select data-adoption><option value="0">0点：なんとなくDXしたい</option><option value="0.5">0.5点：課題はあるが数値化できていない</option><option value="1">1点：削減したい時間・損失が明確</option></select></label>
-            <label class="table-row"><span>業務フローを理解しているか</span><select data-adoption><option value="0">0点：担当者ごとにやり方が違う</option><option value="0.5">0.5点：大枠は把握している</option><option value="1">1点：現場〜事務まで流れを可視化済み</option></select></label>
-            <label class="table-row"><span>運用ルールがあるか</span><select data-adoption><option value="0">0点：入力ルールがない</option><option value="0.5">0.5点：一部ルールはある</option><option value="1">1点：誰がいつ何を入力するか決まっている</option></select></label>
-            <label class="table-row"><span>キーマンが決まっているか</span><select data-adoption><option value="0">0点：決まっていない</option><option value="0.5">0.5点：兼任担当者はいる</option><option value="1">1点：推進責任者と現場協力者がいる</option></select></label>
-            <label class="table-row"><span>現場に浸透させる準備があるか</span><select data-adoption><option value="0">0点：説明・教育は未定</option><option value="0.5">0.5点：説明会だけ予定</option><option value="1">1点：試行現場・教育・問い合わせ先がある</option></select></label>
-            <label class="table-row"><span>改善・定着の振り返りができるか</span><select data-adoption><option value="0">0点：導入後は現場任せ</option><option value="0.5">0.5点：必要時だけ確認</option><option value="1">1点：定例で数値と現場の声を確認する</option></select></label>
+            <p class="helper-text">1行に1業務で入力すると精度が上がります。担当者名、作業内容、時間（分・時間）を入れてください。</p>
           </div>
 
-          <aside class="adoption-result">
-            <p class="card-label">活用準備スコア</p>
-            <div class="meter" aria-label="活用準備スコア">
-              <div class="meter-bar" id="adoptionBar"></div>
+          <aside class="workflow-result" aria-live="polite">
+            <div class="flowchart-head">
+              <p class="card-label">業務フローたたき台</p>
+              <span id="workflowSummary">未入力</span>
             </div>
-            <p class="score"><span id="adoptionScore">0</span>/6点</p>
-            <h3 id="adoptionTitle">要整理：まず診断で現状を言語化しましょう</h3>
-            <p id="adoptionText">導入理由や運用ルールが未整理です。外注前提ではなく、無料相談で「何を決めれば自社で進められるか」を整理しましょう。</p>
-            <a class="button primary full" href="#consultation">導入準備を相談する</a>
+            <div class="flowchart" id="workflowChart"></div>
+            <div class="issue-insights" id="issueInsights"></div>
           </aside>
         </div>
       </section>
