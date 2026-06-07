@@ -770,20 +770,21 @@ input, select { accent-color: var(--primary); margin-right: 8px; }
   align-items: center;
   aspect-ratio: 1;
   background: #fff;
-  border: 2px dashed #94b8aa;
+  border: 0;
   border-radius: 22px;
   color: var(--primary-dark);
   display: grid;
   font-weight: 900;
   justify-items: center;
-  padding: 18px;
+  overflow: hidden;
+  padding: 10px;
   text-align: center;
 }
-.qr-frame small {
-  color: var(--muted);
+.qr-frame img {
   display: block;
-  font-size: 12px;
-  margin-top: 6px;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 .meeting-card .button {
   justify-self: start;
