@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>建設DXソリューション診断｜ツールありきで失敗しないDX</title>
+    <meta
+      name="description"
+      content="建設会社の課題・予算・運用体制から、Excel・AI・施工管理アプリ・原価管理・外部伴走支援まで最適な解決策を可視化する無料診断ページです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260603-refresh" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="建設DX診断トップへ">
+        <span class="logo-mark">建</span>
+        <span>建設DX診断</span>
+      </a>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#solution">ソリューション診断</a>
+        <a href="#tools">候補ツール</a>
+        <a href="#issue-map">課題が不明な方へ</a>
+        <a href="#consultation">無料相談</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">建設業の経営者・現場責任者向け</p>
+          <h1>ツールを選ぶ前に、<br />自社の課題と運用力を見える化する。</h1>
+          <p class="lead">
+            建設DXツールは施工管理・写真・日報・工程・原価・勤怠・会計まで幅広く、いきなりITツールを入れても現場に定着しないことがあります。まずは課題、損失額、予算、社内リソースを整理し、Excel・Google Drive・AI・専用ツール・伴走支援のどれが合うかを診断します。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#solution">無料で診断を始める</a>
+            <a class="button ghost" href="https://app.spirinc.com/t/0qzl501rEgr4nlq5JSeSd/as/3zdEhmEoqUd8cTMu_RV7b/confirm" target="_blank" rel="noreferrer">30分無料相談</a>
+          </div>
+          <dl class="hero-stats" aria-label="診断で整理できること">
+            <div class="is-highlight"><dt>STEP 1</dt><dd>課題特定</dd></div>
+            <div><dt>STEP 2</dt><dd>解決策を比較</dd></div>
+            <div><dt>GOAL</dt><dd>最初の一手を決定</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="intro section-grid">
+        <div>
+          <p class="eyebrow">DX成功のための3ステップ</p>
+          <h2>このサイトではSTEP 1（課題特定と解決策整理）に集中します。</h2>
+        </div>
+        <div class="intro-list flow-list step-focus">
+          <article class="is-supported">
+            <span>このサイトで支援</span>
+            <h3>STEP 1：課題特定と解決策の整理</h3>
+            <p>業務フローから詰まりを見つけ、課題・損失・予算を整理したうえで、Excel・AI・ITツール・伴走支援のどれから始めるべきかを比較します。</p>
+          </article>
+          <article class="is-next-site">
+            <span>別サイトで診断予定</span>
+            <h3>STEP 2：使いこなすための運用準備</h3>
+            <p>担当者、入力ルール、現場への説明、振り返りの場など、導入後に定着させるための準備は別ページで詳しく診断します。</p>
+          </article>
+          <article>
+            <span>GOAL</span>
+            <h3>ツール導入ではなく、現場で効果を感じるDXへ</h3>
+            <p>当サイトではまずSTEP 1に集中し、社内で話し合うべき課題と最初に検証する解決策を見える化します。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="solution" class="diagnosis section-panel">
+        <div class="section-heading">
+          <p class="eyebrow">STEP 1</p>
+          <h2>ソリューション診断</h2>
+          <p>課題カテゴリ・月次損失規模・月額予算を選ぶと、貴社に合う解決策と候補ツールを表示します。</p>
+        </div>
+
+        <div class="diagnosis-layout solution-layout">
+          <form class="question-card" id="solutionForm">
+            <fieldset>
+              <legend>① 解決したい課題を選んでください（複数選択可）</legend>
+              <label><input type="checkbox" name="complexities" value="cost" />原価・収益管理</label>
+              <label><input type="checkbox" name="complexities" value="site_share" />現場情報共有</label>
+              <label><input type="checkbox" name="complexities" value="photo" />写真・書類管理</label>
+              <label><input type="checkbox" name="complexities" value="schedule" />工程管理</label>
+              <label><input type="checkbox" name="complexities" value="labor" />勤怠・労務</label>
+              <label><input type="checkbox" name="complexities" value="contract" />契約・請求・会計</label>
+              <label><input type="checkbox" name="complexities" value="estimate" />見積・受発注</label>
+              <label><input type="checkbox" name="complexities" value="safety" />安全書類</label>
+              <label><input type="checkbox" name="complexities" value="automation" />AI・自動化</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>② 月にどれくらいムダ・損失がありそうですか？（複数選択可）</legend>
+              <label><input type="checkbox" name="loss" value="lt10" />〜10万円：まず整理したい</label>
+              <label><input type="checkbox" name="loss" value="10to50" />10〜50万円：一部業務から改善したい</label>
+              <label><input type="checkbox" name="loss" value="50to100" />50〜100万円：投資対効果を確認したい</label>
+              <label><input type="checkbox" name="loss" value="gt100" />100万円以上：経営課題として優先したい</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>③ 月額予算の目安を選んでください（複数選択可）</legend>
+              <label><input type="checkbox" name="budget" value="free" />無料〜1万円：Excel・Drive・AI中心</label>
+              <label><input type="checkbox" name="budget" value="lt5" />1〜5万円：軽量ITツールも比較</label>
+              <label><input type="checkbox" name="budget" value="lt20" />5〜20万円：現場導入に本格投資</label>
+              <label><input type="checkbox" name="budget" value="gt20" />20万円以上：基幹システム・全社展開</label>
+            </fieldset>
+          </form>
+
+          <aside class="result-card solution-results" id="solutionResults" aria-live="polite">
+            <div class="summary-card">
+              <p class="eyebrow">Recommendation</p>
+              <p class="phase-label" id="phaseLabel">未診断</p>
+              <h3 id="solutionTitle">①〜③を選ぶと、候補ツールを表示します</h3>
+              <p id="solutionSummary">課題カテゴリ・月次損失規模・月額予算を選択してください。選択前は推奨ツールを表示しません。</p>
+            </div>
+
+            <div class="result-block">
+              <h4>推薦ツール</h4>
+              <div class="tool-card-list" id="toolCards"></div>
+              <div class="subsidy-banner" id="subsidyBanner" hidden>フェーズC以上は、IT導入補助金・ものづくり補助金の活用余地も確認しましょう。</div>
+            </div>
+
+            <div class="result-block roadmap-block">
+              <h4>次のステップ</h4>
+              <ol class="mini-roadmap" id="roadmapList"></ol>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="tools" class="tool-section">
+        <div class="section-heading">
+          <h2>候補ツール一覧</h2>
+        </div>
+        <div class="tool-grid logo-tool-grid">
+          <article><div class="logo-tile">Excel</div><span>フェーズA</span><strong>Excel / Googleスプレッドシート</strong><p>原価台帳・案件管理・日報集計のたたき台。</p></article>
+          <article><div class="logo-tile">AI</div><span>フェーズA</span><strong>ChatGPT / Gemini</strong><p>日報要約、議事録、見積文章、FAQ生成。</p></article>
+          <article><div class="logo-tile">Drive</div><span>フェーズA</span><strong>Google Drive / 蔵衛門</strong><p>写真・書類共有、写真台帳、電子小黒板を小さく導入。</p></article>
+          <article><div class="logo-tile">KANNA</div><span>フェーズA-B</span><strong>KANNA / Kaname</strong><p>現場情報共有、日報、写真、協力会社連携を改善。</p></article>
+          <article><div class="logo-tile">労務</div><span>フェーズB</span><strong>ジョブカン / クラウドサイン / freee</strong><p>勤怠、電子契約、会計・人事労務を整備。</p></article>
+          <article><div class="logo-tile">kintone</div><span>フェーズB-C</span><strong>kintone / AppSheet / バレーナ</strong><p>自社業務に合わせたノーコードアプリと業務連携。</p></article>
+          <article><div class="logo-tile">ANDPAD</div><span>フェーズC</span><strong>ANDPAD / AnyONE / アイピア</strong><p>原価・見積・工程・請求など複数課題を一元管理。</p></article>
+          <article><div class="logo-tile">BIM</div><span>フェーズD</span><strong>カスタム開発 / BIM・CIM連携</strong><p>全社DX、基幹刷新、3次元データ活用を長期投資で推進。</p></article>
+        </div>
+      </section>
+
+      <section id="issue-map" class="issue-map section-panel">
+        <div class="section-heading">
+          <p class="eyebrow">課題特定診断</p>
+          <h2>何が自社の課題かわからない方へ</h2>
+          <p>「誰が・何を・どれくらい時間をかけているか」を書くと、ブラウザ上で業務フロー図のたたき台を作成します。AI/APIなしのデモのため、まずは課題整理の入口としてご利用ください。</p>
+        </div>
+
+        <div class="issue-layout">
+          <div class="workflow-input-card">
+            <label for="workflowInput">業務の流れを入力してください</label>
+            <textarea id="workflowInput" rows="10" placeholder="例：
+社長が電話で新規依頼を受ける：10分
+社長が現場監督へLINEで現地調査を依頼：5分
+現場監督が現地調査をして写真を撮る：90分
+事務が見積書へ転記する：40分
+社長が金額を確認し、差し戻しが発生する：30分
+お客様へ見積提出：15分"></textarea>
+            <div class="workflow-actions">
+              <button class="button primary" type="button" id="sampleWorkflowButton">サンプルを入れる</button>
+              <a class="button ghost" href="#consultation">フローを相談する</a>
+            </div>
+            <p class="helper-text">1行に1業務で入力すると精度が上がります。担当者名、作業内容、時間（分・時間）を入れてください。</p>
+          </div>
+
+          <aside class="workflow-result" aria-live="polite">
+            <div class="flowchart-head">
+              <p class="card-label">業務フローたたき台</p>
+              <span id="workflowSummary">未入力</span>
+            </div>
+            <div class="flowchart" id="workflowChart"></div>
+            <div class="issue-insights" id="issueInsights"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="consultation" class="consultation">
+        <p class="eyebrow">Free consultation</p>
+        <h2>気になった内容を、お気軽にご相談ください。</h2>
+        <p>「この診断結果で合っているか知りたい」「業務フローを文章で送って見てほしい」など、まだ課題がまとまっていない段階でも大丈夫です。LINEのチャットで気軽に相談でき、オンラインでじっくり整理したい方は30分無料相談をご予約いただけます。</p>
+        <div class="consultation-options">
+          <article class="consult-card line-card">
+            <div>
+              <span class="consult-tag">LINE相談</span>
+              <h3>チャットで気軽に相談する</h3>
+              <p>課題がまとまっていなくてもOKです。現場で困っていること、業務フローのメモ、現在使っているExcelなどをチャットで送ってください。</p>
+            </div>
+            <a class="qr-frame" href="https://lin.ee/OnCmHnk" target="_blank" rel="noreferrer" aria-label="LINE相談を開く">
+              <img src="assets/line-qr.svg" alt="LINE相談用QRコード" />
+            </a>
+          </article>
+          <article class="consult-card meeting-card">
+            <span class="consult-tag">オンライン相談</span>
+            <h3>30分無料相談で整理する</h3>
+            <p>画面共有しながら、課題・運用体制・解決策の方向性を一緒に整理します。</p>
+            <a class="button primary" href="https://app.spirinc.com/t/0qzl501rEgr4nlq5JSeSd/as/3zdEhmEoqUd8cTMu_RV7b/confirm" target="_blank" rel="noreferrer">30分無料相談を予約する</a>
+            <a class="button ghost light" href="#solution">もう一度診断する</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-company">株式会社ヒトスジ：<a href="https://h-suji.com/" target="_blank" rel="noreferrer">企業概要・ホームページを見る</a></p>
+    </footer>
+
+    <script src="script.js?v=20260603-refresh"></script>
+  </body>
+</html>
