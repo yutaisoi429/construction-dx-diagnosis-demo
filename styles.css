@@ -73,11 +73,12 @@ section { padding: 84px clamp(18px, 5vw, 72px); }
   align-items: center;
   display: grid;
   gap: clamp(32px, 5vw, 78px);
-  grid-template-columns: minmax(0, 1.1fr) minmax(330px, 0.9fr);
-  min-height: calc(100vh - 68px);
-  padding-top: 58px;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: auto;
+  padding-bottom: clamp(56px, 8vw, 96px);
+  padding-top: 82px;
 }
-.hero-copy { max-width: 900px; }
+.hero-copy { max-width: 980px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0; }
 .hero-actions.center { justify-content: center; }
 .button {
@@ -103,13 +104,19 @@ section { padding: 84px clamp(18px, 5vw, 72px); }
   gap: 12px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 32px 0 0;
-  max-width: 720px;
+  max-width: 760px;
 }
 .hero-stats div {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 16px;
+}
+.hero-stats .is-highlight {
+  background: linear-gradient(135deg, #f4fbf7, #e3f4ef);
+  border: 2px solid var(--primary);
+  box-shadow: 0 18px 42px rgba(27, 61, 47, 0.18);
+  transform: translateY(-4px);
 }
 .hero-stats dt { color: var(--accent); font-size: 13px; font-weight: 900; }
 .hero-stats dd { font-size: clamp(17px, 1.6vw, 20px); font-weight: 900; margin: 4px 0 0; }
